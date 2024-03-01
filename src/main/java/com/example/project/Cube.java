@@ -1,4 +1,7 @@
 package com.example.project;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Cube {
 
@@ -289,7 +292,7 @@ public class Cube {
 			}
 			System.out.println("");
 		}
-		
+
 		System.out.println("");
 	}
 
@@ -299,22 +302,91 @@ public class Cube {
 
 	public static void main(final String[] args) {
 
-	B(Cube);
+		printCube(Cube);
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<String> moves = new ArrayList<>();
+		boolean moveAgain = true;
 
-	printCube(Cube);
+		while (moveAgain) {
+        
+			System.out.println("Please enter a move(\"u\", \"u'\", \"d\", \"d'\", \"l\", \"l'\", \"r\", \"r'\", \"f\", \"f'\", \"b\", \"b'\")");
+			String move = scanner.next();
+			
+			moves.add(move);
 
-	Bprime(Cube);
-
-	printCube(Cube);
-
-
-
-	}
-
-
-
-	
-	
-
+			switch (move) {
+				case "u":{
+					U(Cube);
+					break; 
+				}
+				case "u'":{
+					Uprime(Cube);
+					break;
+				}
+				case "d":{
+					D(Cube);
+					break;
+				}
+				case "d'":{
+					Dprime(Cube);
+					break;
+				}
+				case "l":{
+					L(Cube);
+					break;
+				}
+				case "l'":{
+					Lprime(Cube);
+					break;
+				}
+				case "r":{
+					R(Cube);
+					break;
+				}
+				case "r'":{
+					Rprime(Cube);
+					break;
+				}
+				case "f":{
+					F(Cube);
+					break;
+				}
+				case "f'":{
+					Fprime(Cube);
+					break;
+				}
+				case "b":{
+					B(Cube);
+				}
+				case "b'":{
+					Bprime(Cube);
+					break;
+				}
+			}
+			printCube(Cube);
+			System.out.print("Keep moving? (\"y\" or \"n\") ");
+			String solve = scanner.next();
+			if (solve.equalsIgnoreCase("n")) {
+				moveAgain = false;
+			}
+		}
+		scanner.close();
+		System.out.println("");
+		System.out.print("Moves to solve: ");
+		Collections.reverse(moves);
+        
+        for (String move : moves) {
+            System.out.print(move);
+			System.out.print(" ");
+		}
+	}			
 }
+
+
+
+
+	
+	
+
+
 
