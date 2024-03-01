@@ -312,54 +312,66 @@ public class Cube {
 			System.out.println("Please enter a move(\"u\", \"u'\", \"d\", \"d'\", \"l\", \"l'\", \"r\", \"r'\", \"f\", \"f'\", \"b\", \"b'\")");
 			String move = scanner.next();
 			
-			moves.add(move);
 
 			switch (move) {
 				case "u":{
 					U(Cube);
+					moves.add("u'");
 					break; 
 				}
 				case "u'":{
 					Uprime(Cube);
+					moves.add("u");
 					break;
 				}
 				case "d":{
 					D(Cube);
+					moves.add("d'");
 					break;
 				}
 				case "d'":{
 					Dprime(Cube);
+					moves.add("d");
 					break;
 				}
 				case "l":{
 					L(Cube);
+					moves.add("l'");
 					break;
 				}
 				case "l'":{
 					Lprime(Cube);
+					moves.add("l");
 					break;
 				}
 				case "r":{
 					R(Cube);
+					moves.add("r'");
 					break;
 				}
 				case "r'":{
 					Rprime(Cube);
+					moves.add("r");
 					break;
 				}
 				case "f":{
 					F(Cube);
+					moves.add("f'");
 					break;
 				}
 				case "f'":{
 					Fprime(Cube);
+					moves.add("f");
 					break;
 				}
 				case "b":{
 					B(Cube);
+					moves.add("b'");
+					break;
 				}
 				case "b'":{
 					Bprime(Cube);
+					moves.add("b");
 					break;
 				}
 			}
@@ -371,7 +383,7 @@ public class Cube {
 			}
 		}
 		scanner.close();
-		System.out.println("");
+		System.out.println(""); //do the primes of moves first and then reverse it 
 		System.out.print("Moves to solve: ");
 		Collections.reverse(moves);
         
