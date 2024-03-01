@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Cube {
 
-	//A cube for edge sliding 
+	//A whole cube
     static String[][] Cube = {
 		{null, null, null, "w0", "w1", "w2", null, null, null},
 		{null, null, null, "w3", "w4", "w5", null, null, null},
@@ -54,9 +54,9 @@ public class Cube {
 
 	static void U(String[][] Cube){
 
-		rotate(Cube, 0, 3); //rotating white face clockwise
+		rotate(Cube, 0, 3); 
 
-		String[] temp = {Cube[3][0], Cube[3][1], Cube[3][2]}; //holding onto the blue layer
+		String[] temp = {Cube[3][0], Cube[3][1], Cube[3][2]}; 
 
 		for(int i = 0; i < 9; i++){
 		Cube[3][i] = Cube[3][i + 3];
@@ -78,9 +78,9 @@ public class Cube {
 
 	static void D(String[][] Cube){
 
-		rotate(Cube, 6, 3); //rotating yellow face clockwise
+		rotate(Cube, 6, 3); 
 
-		String[] temp = {Cube[5][9], Cube[5][10], Cube[5][11]}; //holding onto the red layer
+		String[] temp = {Cube[5][9], Cube[5][10], Cube[5][11]}; 
 
 		for(int i = 11; i > 2; i--){
 		Cube[5][i] = Cube[5][i - 3];
@@ -101,21 +101,21 @@ public class Cube {
 
 	static void L(String[][] Cube){
 
-		rotate(Cube, 3, 3); //rotating orange face clockwise
+		rotate(Cube, 3, 3); 
 
-		String[] temp = {Cube[0][3], Cube[1][3], Cube[2][3]}; //holding onto the white layer
+		String[] temp = {Cube[0][3], Cube[1][3], Cube[2][3]}; 
 
 		Cube[0][3] = Cube[3][0];
 		Cube[1][3] = Cube[4][0];
 		Cube[2][3] = Cube[5][0];
 
-		String[] Temp = {Cube[3][6], Cube[4][6], Cube[5][6]}; //holding onto the green layer
+		String[] Temp = {Cube[3][6], Cube[4][6], Cube[5][6]}; 
 
 		Cube[3][6] = temp[0];
 		Cube[4][6] = temp[1];
 		Cube[5][6] = temp[2];
 
-		String[] TEMP = {Cube[6][5], Cube[7][5], Cube[8][5]}; //holding onto the yellow layer
+		String[] TEMP = {Cube[6][5], Cube[7][5], Cube[8][5]}; 
 
 		Cube[6][5] = Temp[0];
 		Cube[7][5] = Temp[1];
@@ -134,9 +134,9 @@ public class Cube {
 
 	static void R(String[][] Cube){ 
 
-		rotate(Cube, 3, 9); //rotating red face clockwise
+		rotate(Cube, 3, 9); 
 
-		String[] temp = {Cube[0][5], Cube[1][5], Cube[2][5]}; //holding onto the white layer
+		String[] temp = {Cube[0][5], Cube[1][5], Cube[2][5]}; 
 
 		Cube[0][5] = Cube[3][8];
 		Cube[1][5] = Cube[4][8];
@@ -169,7 +169,7 @@ public class Cube {
 
 		rotate(Cube, 3, 6);
 
-		String[] temp = {Cube[2][3], Cube[2][4], Cube[2][5]}; //holding onto the white layer
+		String[] temp = {Cube[2][3], Cube[2][4], Cube[2][5]}; 
 
 		Cube[2][3] = Cube[5][5];
 		Cube[2][4] = Cube[4][5];
